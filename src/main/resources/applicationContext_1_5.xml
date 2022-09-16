@@ -7,26 +7,35 @@
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd"
 >
-
   <!-- Bean Configuration/Definition -->
-	<bean
-		id="service"
-		class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services"
-		scope="singleton"
-		abstract="true"
-	/>
-	<!-- <bean id="service" class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services" scope="prototype"/> -->
+<!--	<bean-->
+<!--		id="myService"-->
+<!--		class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services"-->
+<!--		scope="singleton"-->
+<!--	/>-->
+
+<!--	<bean-->
+<!--		id="myService"-->
+<!--		class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services"-->
+<!--		scope="prototype"-->
+<!--	/>-->
 
   <!-- Dependency Injection -->
-  <bean id="service" class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services" abstract="true">
-    <!-- constructor-based dependency injection -->
-  	<!-- <constructor-arg ref="repository"/> -->
+<!--  <bean-->
+<!--    id="myService"-->
+<!--    class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services"-->
+<!--  >-->
+<!--    &lt;!&ndash; constructor-based dependency injection &ndash;&gt;-->
+<!--  	 <constructor-arg ref="repo"/> -->
 
-    <!-- setter-based dependency injection -->
-  	<!-- <property name="repos" ref="repository"/> -->
-  </bean>
+<!--    &lt;!&ndash; setter-based dependency injection &ndash;&gt;-->
+<!--  	 <property name="repos" ref="repo"/> -->
+<!--  </bean>-->
 
-  <!-- <bean id="repository" class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.Repos"/> -->
+<!--   <bean -->
+<!--     id="repo" -->
+<!--     class="com.udemy.matt_speake.spring_fundamentals.sec_1_5.data.Repos"-->
+<!--   /> -->
     
   <context:component-scan base-package="com.udemy.matt_speake.spring_fundamentals.sec_1_5"/>
 </beans>

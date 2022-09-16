@@ -19,9 +19,9 @@ public class ServicesImplementation1 implements Services {
     }
 
     // setter-based dependency injection
-    // public void setRepos(Repos repos) {
-    //   this.repos = repos;
-    // }
+     public void setRepos(Repos repos) {
+       this.repos = repos;
+     }
 
     @Override
     public void doBusinessLogic() {

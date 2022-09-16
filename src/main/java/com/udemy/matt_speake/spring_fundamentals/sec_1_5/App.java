@@ -4,8 +4,8 @@ import com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.ServicesImplem
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-// import org.springframework.context.support.ClassPathXmlApplicationContext;
-// import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.Services;
 import com.udemy.matt_speake.spring_fundamentals.sec_1_5.business.ServicesImplementation1;
@@ -22,11 +22,11 @@ public class App {
 		*/
 		// ApplicationContext appContext = new FileSystemXmlApplicationContext("applicationContext_1_5.xml");
 		// ApplicationContext appContext = new ClassPathXmlApplicationContext("applicationContext_1_5.xml");
-		// ApplicationContext appContext = new AnnotationConfigApplicationContext("udemy.matt_speake.sec_1_5");
-		ApplicationContext appContext = new AnnotationConfigApplicationContext(Config.class);
+		// ApplicationContext appContext = new AnnotationConfigApplicationContext("com.udemy.matt_speake.spring_fundamentals.sec_1_5");
+		ApplicationContext appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
 		// bean1, bean2 & bean3 point to either the same Bean instance or different ones in the Spring Container
-		// this is Singleton/Prototype scope, defined in either applicationContext.xml or Config.java
+		// this is Singleton/Prototype scope, defined in either applicationContext.xml or DevConfig.java
 		ServicesImplementation1 bean1 = appContext.getBean(ServicesImplementation1.class);
 		ServicesImplementation1 bean2 = appContext.getBean(ServicesImplementation1.class);
 		ServicesImplementation1 bean3 = appContext.getBean(ServicesImplementation1.class);
@@ -46,6 +46,7 @@ public class App {
 
 		Services serviceBean2 = appContext.getBean(ServicesImplementation1.class);
 		serviceBean2.doBusinessLogic();
+
 		Services serviceBean3 = appContext.getBean(ServicesImplementation2.class);
 		serviceBean3.doBusinessLogic();
 
